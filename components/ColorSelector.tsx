@@ -9,10 +9,10 @@ type Props = {
 
 export function ColorSelector({ colors, onSelect }: Props) {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col w-full">
       <h2 className="text-xl font-semibold text-primary">Escolha uma cor</h2>
       <Select onValueChange={onSelect}>
-        <SelectTrigger className="w-64">
+        <SelectTrigger className="w-full">
           <SelectValue placeholder="Selecione a cor" />
         </SelectTrigger>
         <SelectContent>

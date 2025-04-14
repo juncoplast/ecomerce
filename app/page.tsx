@@ -5,64 +5,43 @@ import { ColorSelector } from "@/components/ColorSelector";
 import { TypeSelector } from "@/components/TypeSelector";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import GradientText from "@/components/GradientText/GradientText";
 
 const colors = [
-  "BRANCO",
-  "ARGILA INP",
-  "VERDE MUSGO INP",
-  "VERDE BAMBU INP",
-  "LARANJA INP",
-  "VERDE TIFANY INP",
-  "ANARELO INP",
-  "PRETO INP",
-  "TABACO INP",
-  "GRAFITE INP",
-  "CHOCOLATE INP",
-  "TERRACOTA INP",
-  "CAMURÇA INP",
-  "PALHA IMP",
-  "MARFIM IMP",
-  "BRANCO IMPERIAL",
-  "ARGILA FRI",
-  "PRETO FRI",
-  "GRAFITE FRI",
-  "VERDE MUSGO FRI",
-  "VERDE BAMBU FRI",
-  "CHOCOLATE FRI",
-  "PALHA FRI",
-  "CAMURÇA FRI",
-  "MARFIM FRIZADO",
-  "CAPICCINO",
-  "ARGILA",
-  "CARVALHO",
-  "AVELÃ ENVELHECIDO",
-  "CARAMELO",
-  "CEREJA TROPICAL",
-  "TABACO TROPICAL",
-  "CAPUCCINO TROPICAL",
-  "PALHA TROPICAL",
-  "TERRACOTA",
-  "VERMELHO",
-  "LARANJA",
-  "ROSA PINK",
-  "AZUL MARINHO",
-  "AZUL ROYAL",
-  "VERDE BAMBU",
-  "VERDE MUSGO",
-  "VERDE LIMÃO",
-  "VERDE TIFFANY",
-  "AMARELO",
-  "AZUL BB",
-  "VERDE BB",
-  "ROSA BB",
-  "PRETO",
-  "TABACO",
-  "CINZA",
-  "CHOCOLATE",
-  "PALHA",
-  "CAMURÇA",
-  "MARFIM",
-  "AREIA",
+  "Amarela",
+  "Areia",
+  "Argila",
+  "Avelã env ",
+  "Azul BB",
+  "Azul Marinho",
+  "Azul Royal",
+  "Branco",
+  "Chocolate ",
+  "Cinza",
+  "Capuccino tropical ",
+  "Caramelo ",
+  "Cerejeira tropical",
+  "Carvalho ",
+  "Capuccino ",
+  "Camurça ",
+  "Gráfite ",
+  "Laranja ",
+  "Marfim ",
+  "Madeira",
+  "Preto",
+  "Palha",
+  "Palha tropical ",
+  "Rosa bb",
+  "Rosa pink ",
+  "Roxo ",
+  "Tabaco tropical ",
+  "Tabaco",
+  "Terracota ",
+  "Verde bb",
+  "Verde musgo ",
+  "Verde bambu ",
+  "Verde limão ",
+  "Verde Tiffany",
 ];
 
 const types = ["FRIZADO", "IMPERIAL", "CD", "MC", "FITA", "CORDÃO NALTICO"];
@@ -124,13 +103,27 @@ export default function Home() {
 
   return (
     <main className="flex-1 flex flex-col gap-10">
-      <div className="flex items-center justify-center gap-10 ">
-        <Avatar>
-          <AvatarImage className="dark:bg-white rounded-full" src="/favicon.ico" />
+      <div className="flex items-center justify-center gap-10">
+        <Avatar className="w-20 h-20">
+          <AvatarImage
+            className="dark:bg-white rounded-full"
+            src="/logo.jpg"
+          />
         </Avatar>
       </div>
 
-      <ColorSelector colors={colors} onSelect={setSelectedColor} />
+      <GradientText
+        colors={["#f6812c", "#eb9344", "#FF3232", "#f6812c"]}
+        animationSpeed={1}
+        showBorder={false}
+        className="custom-class"
+      >
+        Juncoplast!
+      </GradientText>
+
+      <div className="w-full">
+        <ColorSelector colors={colors} onSelect={setSelectedColor} />
+      </div>
 
       {selectedColor && (
         <>
