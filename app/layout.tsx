@@ -34,28 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex flex-col">
-            {/* NAV */}
-            <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 fixed top-0 bg-background z-50">
-              <div className="w-full max-w-5xl flex justify-center items-center p-3 px-5 text-sm">
-                <div className="flex gap-5 items-center font-semibold">
-                  <Link href={"/"}>Orçamentos Juncoplast</Link>
-                </div>
-              </div>
-            </nav>
-
-            {/* Espaço para o nav fixo */}
-            <div className="h-16" />
-
-            {/* Aurora */}
-            <Aurora
-              colorStops={["#f6812c", "#eb9344", "#FF3232"]}
-              blend={0.5}
-              amplitude={1.0}
-              speed={0.5}
-            />
-
-            {/* Conteúdo */}
-            <div className="flex flex-col gap-20 max-w-5xl p-5 mx-auto w-full">
+            <div className="flex flex-col gap-20 mx-auto">
               {children}
             </div>
           </main>

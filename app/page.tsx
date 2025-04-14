@@ -44,7 +44,7 @@ const colors = [
   "Verde Tiffany",
 ];
 
-const types = ["FRIZADO", "IMPERIAL", "CD", "MC", "FITA", "CORDÃO NALTICO"];
+const types = ["CD ( Cordão 4mm )", "CDN ( Cordão Náutico 6mm )", "MC ( Meia Cana 6mm )",  "FT ( Fita 10mm )", "FTI ( Fita Imperial 10mm )", "FTF ( Fita Frizada 10mm )" ];
 
 export default function Home() {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -111,15 +111,6 @@ export default function Home() {
           />
         </Avatar>
       </div>
-
-      <GradientText
-        colors={["#f6812c", "#eb9344", "#FF3232", "#f6812c"]}
-        animationSpeed={1}
-        showBorder={false}
-        className="custom-class"
-      >
-        Juncoplast!
-      </GradientText>
 
       <div className="w-full">
         <ColorSelector colors={colors} onSelect={setSelectedColor} />

@@ -12,12 +12,12 @@ type Props = {
 export function TypeSelector({ color, types, quantities, onChange }: Props) {
   return (
     <section className="flex flex-col gap-6">
-      <h3 className="text-lg font-medium text-primary">Tipos disponíveis ({color})</h3>
+      <h3 className="text-lg font-medium text-black">{color}</h3>
       <div className="flex flex-col gap-4">
         {types.map((type) => (
           <div
             key={type}
-            className="flex items-center justify-between border rounded-xl px-4 py-3 bg-muted"
+            className="flex items-center justify-between border rounded-xl px-4 bg-muted"
           >
             <span className="text-sm font-medium mr-2">{type}</span>
             <div className="flex items-center gap-2">
