@@ -93,7 +93,7 @@ export default function Home() {
                 variant="outline"
                 className="mt-8 border-primary text-primary hover:bg-primary/5"
               >
-                Conheça Nossa História <ExternalLink className="ml-2 h-4 w-4" />
+                <Link href={"/produtos"}>Nossos Produtos</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -310,7 +310,7 @@ export default function Home() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                Conheça Nossos Produtos
+                <Link href={"produtos"}>Conheça Nossos Produtos</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -433,16 +433,7 @@ export default function Home() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                Solicitar Orçamento
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/5"
-              >
-                Fale com um Especialista
+                <Link href={"/produtos"}>Solicitar Orçamento</Link>
               </Button>
             </motion.div>
           </motion.div>
