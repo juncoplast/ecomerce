@@ -55,7 +55,7 @@ const types = [
 ];
 
 export default function Home() {
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string>("Todas as cores");
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [cart, setCart] = useState<
     { color: string; type: string; quantity: number }[]
@@ -86,15 +86,19 @@ export default function Home() {
 
     setCart((prev) => [...prev, ...items]);
     setQuantities({});
-    setSelectedColor(null);
+    setSelectedColor("Todas as cores");
   };
 
   const handleClearCart = () => {
     setCart([]);
+    setSelectedColor("Todas as cores");
   };
   const handleCheckout = () => {
+    const today = new Date().toLocaleDateString("pt-BR"); // pega a data no formato dd/mm/yyyy
+
     const message = [
-      "🛒 *Novo Orçamento*",
+      "🛒 *Orçamento*",
+      `📅 *Data:* ${today}`,
       "",
       ...cart.map(
         (item) => `✅ *${item.quantity}x* ${item.type} - _${item.color}_`
@@ -112,7 +116,11 @@ export default function Home() {
   return (
     <main className="mt-[25vh] flex-1 flex flex-col w-full gap-7">
       <div className="px-5 mt-2">
-        <ColorSelector colors={colors} onSelect={setSelectedColor} />
+        <ColorSelector
+          colors={colors}
+          selectedColor={selectedColor}
+          onSelect={setSelectedColor}
+        />
       </div>
 
       {selectedColor && (
