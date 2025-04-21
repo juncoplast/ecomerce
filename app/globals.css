@@ -4,58 +4,58 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
-    --primary: 28 83% 60%; /* laranja claro #eb9344 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 28 83% 93%; /* um laranja muito claro */
-    --accent-foreground: 0 0% 10%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 86%;
-    --input: 0 0% 86%;
-    --ring: 28 83% 60%;
+    --background: 0 0% 100%;              /* #ffffff */
+    --foreground: 0 0% 5%;                /* #0d0d0d */
+    --card: 0 0% 100%;                    /* #ffffff */
+    --card-foreground: 0 0% 5%;           /* #0d0d0d */
+    --popover: 0 0% 100%;                 /* #ffffff */
+    --popover-foreground: 0 0% 5%;        /* #0d0d0d */
+    --primary: 28 83% 60%;                /* #eb9344 */
+    --primary-foreground: 0 0% 100%;      /* #ffffff */
+    --secondary: 0 0% 98%;                /* #fafafa */
+    --secondary-foreground: 0 0% 10%;     /* #1a1a1a */
+    --muted: 0 0% 95%;                    /* #f2f2f2 */
+    --muted-foreground: 0 0% 45%;         /* #737373 */
+    --accent: 28 83% 93%;                 /* #fce9d9 */
+    --accent-foreground: 0 0% 10%;        /* #1a1a1a */
+    --destructive: 0 84% 60%;             /* #eb4d4b */
+    --destructive-foreground: 0 0% 100%;  /* #ffffff */
+    --border: 0 0% 86%;                   /* #dbdbdb */
+    --input: 0 0% 86%;                    /* #dbdbdb */
+    --ring: 28 83% 60%;                   /* #eb9344 */
     --radius: 0.5rem;
-    --chart-1: 28 83% 60%;
-    --chart-2: 160 58% 39%;
-    --chart-3: 210 37% 30%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 28 83% 60%;                /* #eb9344 */
+    --chart-2: 160 58% 39%;               /* #2a9d8f */
+    --chart-3: 210 37% 30%;               /* #2a4c6e */
+    --chart-4: 43 74% 66%;                /* #f6cf71 */
+    --chart-5: 27 87% 67%;                /* #f4a261 */
   }
 
   .dark {
-    --background: 0 0% 5%; /* #0d0d0d */
-    --foreground: 0 0% 98%;
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 28 91% 58%; /* laranja escuro #f6812c */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 28 91% 30%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 28 91% 58%;
-    --chart-1: 28 91% 58%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 0 0% 5%;                /* #0d0d0d */
+    --foreground: 0 0% 98%;               /* #fafafa */
+    --card: 0 0% 7%;                      /* #121212 */
+    --card-foreground: 0 0% 98%;          /* #fafafa */
+    --popover: 0 0% 7%;                   /* #121212 */
+    --popover-foreground: 0 0% 98%;       /* #fafafa */
+    --primary: 28 91% 58%;                /* #f6812c */
+    --primary-foreground: 0 0% 100%;      /* #ffffff */
+    --secondary: 0 0% 15%;                /* #262626 */
+    --secondary-foreground: 0 0% 95%;     /* #f2f2f2 */
+    --muted: 0 0% 12%;                    /* #1f1f1f */
+    --muted-foreground: 0 0% 65%;         /* #a6a6a6 */
+    --accent: 28 91% 30%;                 /* #7b3f16 */
+    --accent-foreground: 0 0% 98%;        /* #fafafa */
+    --destructive: 0 62% 30%;             /* #661f1f */
+    --destructive-foreground: 0 0% 98%;   /* #fafafa */
+    --border: 0 0% 20%;                   /* #333333 */
+    --input: 0 0% 20%;                    /* #333333 */
+    --ring: 28 91% 58%;                   /* #f6812c */
+    --chart-1: 28 91% 58%;                /* #f6812c */
+    --chart-2: 160 60% 45%;               /* #319f89 */
+    --chart-3: 30 80% 55%;                /* #f29c51 */
+    --chart-4: 280 65% 60%;               /* #c971d4 */
+    --chart-5: 340 75% 55%;               /* #e0527e */
   }
 }
 

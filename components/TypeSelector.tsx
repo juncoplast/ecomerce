@@ -19,9 +19,9 @@ export function TypeSelector({
 }: Props) {
   return (
     <section className="flex flex-col w-full max-w-screen-xl items-center">
-      <div className="border text-muted w-full px-2 h-28" style={{ backgroundImage: "url(/PINUS-ESTONADO-300x240.jpg)" }}>
-      </div>
       <h3 className="text-lg font-medium text-muted-foreground">{color}</h3>
+      <div className="border text-muted w-full px-2 h-28 mb-6" style={{ backgroundImage: "url(/PINUS-ESTONADO-300x240.jpg)" }}>
+      </div>
       <div className="flex flex-col gap-0.5">
         {types.map((type) => {
           const key = useKeyPrefix ? `${color}__${type}` : type;
