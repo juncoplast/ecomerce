@@ -8,7 +8,7 @@ export default function Hero() {
       className="fixed top-0 left-0 w-full h-[25vh] z-50 bg-cover bg-center bg-no-repeat"
       // style={{ backgroundImage: "url(/PINUS-ESTONADO-300x240.jpg)" }}
     >
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-gray-300" />
       <div className="relative z-10 flex flex-row items-center justify-center h-full text-center text-white px-4">
         {/* Imagem responsiva */}
         <div className="w-[700px] sm:w-[120px] md:w-[160px] lg:w-[500px]">

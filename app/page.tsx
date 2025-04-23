@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const fadeIn = {
@@ -55,7 +56,7 @@ export default function Home() {
     <main className="flex flex-col w-full bg-background">
       <section
         id="empresa"
-        className="mt-[25vh] py-20 px-6 md:px-20 max-w-screen-2xl mx-auto"
+        className="mt-[15vh] py-20 px-6 md:px-20 max-w-screen-2xl mx-auto"
       >
         <motion.div
           className="flex flex-col md:flex-row gap-12 items-center"
@@ -64,8 +65,9 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn}
         >
-          <motion.div className="md:w-1/2" variants={fadeIn}>
-            <h2 className="text-3xl font-bold text-primary mb-6">
+          <motion.div className="md:w-1/2 mx-auto text-justify" variants={fadeIn}>
+
+            <h2 className="text-3xl font-bold text-primary mb-6 mt-8 text-center">
               Sobre a Juncoplast
             </h2>
             <p className="text-base md:text-lg text-foreground/80 mb-6">
@@ -75,29 +77,34 @@ export default function Home() {
               <strong>fibras sintéticas de alta qualidade</strong>, voltadas
               especialmente para o setor moveleiro e de decoração.
             </p>
+
             <p className="text-base md:text-lg text-foreground/80 mb-6">
-              Com sede em Fortaleza (CE) e filial em Gravata (PE), atuamos
-              dentro do setor de <em>Indústrias da Transformação</em> e contamos
-              com uma equipe entre 21 e 50 colaboradores altamente capacitados.
+              Com fábrica em Fortaleza (CE) e representantes em diversas regiões, atuamos
+              dentro do setor de <em>Indústrias de Transformação</em> e contamos
+              com uma equipe de colaboradores altamente capacitados.
             </p>
+
             <p className="text-base md:text-lg text-foreground/80">
-              Desenvolvemos{" "}
-              <strong className="text-primary">
-                fibras sintéticas com aditivo Anti-UV
-              </strong>
-              , resistentes às intempéries, fáceis de limpar, com alto poder de
+              Fabricamos{" "}<strong className="text-primary">fibras sintéticas com aditivo Anti-UV </strong>
+              importado, resistentes às intempéries, fáceis de limpar, com alto poder de
               respiro, oferecendo conforto térmico e durabilidade excepcional.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex justify-center"
+            >
               <Button
-                variant="outline"
-                className="mt-8 border-primary text-primary hover:bg-primary/5"
+                asChild
+                variant="default"
+                className="mt-10 border-primary text-primary-foreground hover:bg-primary/5"
               >
-                <Link href={"/produtos"}>Nossos Produtos</Link>
+                <Link href="/produtos">Conheça Nossos Produtos</Link>
               </Button>
             </motion.div>
           </motion.div>
-          <motion.div
+
+          {/* <motion.div
             className="md:w-1/2 flex justify-center"
             variants={fadeIn}
           >
@@ -127,12 +134,12 @@ export default function Home() {
                 <span className="text-primary text-xs font-bold">HD</span>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </section>
 
       {/* Nossos Diferenciais */}
-      <section className="bg-accent py-20 px-6 md:px-20">
+      <section className="bg-accent py-8 px-6 md:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -141,7 +148,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn}
           >
-            <motion.span
+            {/* <motion.span
               className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -149,7 +156,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               DIFERENCIAIS
-            </motion.span>
+            </motion.span> */}
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Por que escolher a Juncoplast?
             </h2>
@@ -160,9 +167,9 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               viewport={{ once: true }}
             ></motion.div>
-            <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-lg text-foreground/80 max-w-3xl text-justify mx-auto">
               Descubra o que faz da Juncoplast uma referência no mercado de
-              fibras sintéticas para o setor moveleiro
+              fibras sintéticas para o setor moveleiro.
             </p>
           </motion.div>
 
@@ -175,7 +182,7 @@ export default function Home() {
           >
             {/* Card 1 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -196,7 +203,7 @@ export default function Home() {
 
             {/* Card 2 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -208,7 +215,7 @@ export default function Home() {
                   Tecnologia Anti-UV
                 </h3>
                 <p className="text-foreground/70">
-                  Nossas fibras sintéticas contam com aditivo Anti-UV,
+                  Nossas fibras sintéticas contam com aditivo Anti-UV importado,
                   garantindo resistência às intempéries e maior durabilidade em
                   ambientes externos.
                 </p>
@@ -217,7 +224,7 @@ export default function Home() {
 
             {/* Card 3 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -237,7 +244,7 @@ export default function Home() {
 
             {/* Card 4 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -249,16 +256,14 @@ export default function Home() {
                   Equipe Especializada
                 </h3>
                 <p className="text-foreground/70">
-                  Contamos com profissionais altamente capacitados,
-                  comprometidos com a inovação e excelência em cada etapa do
-                  processo.
+                  Contamos com profissionais altamente capacitados, comprometidos com a inovação e excelência em cada etapa do processo.
                 </p>
               </div>
             </motion.div>
 
             {/* Card 5 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -279,7 +284,7 @@ export default function Home() {
 
             {/* Card 6 */}
             <motion.div
-              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group"
+              className="bg-card rounded-lg shadow-md transition-all hover:shadow-xl hover:translate-y-[-5px] group text-justify"
               variants={cardVariants}
               whileHover={{ y: -10 }}
             >
@@ -298,7 +303,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="mt-16 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -313,89 +318,13 @@ export default function Home() {
                 <Link href={"produtos"}>Conheça Nossos Produtos</Link>
               </Button>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
-      {/* Estatísticas */}
-      <motion.section
-        className="py-16 px-6 md:px-20 bg-gradient-to-r from-primary to-primary/80 text-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div className="text-center" variants={statsVariants}>
-              <motion.div
-                className="text-5xl font-bold mb-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                14+
-              </motion.div>
-              <div className="text-lg font-medium text-white/90">
-                Anos de experiência
-              </div>
-            </motion.div>
-            <motion.div className="text-center" variants={statsVariants}>
-              <motion.div
-                className="text-5xl font-bold mb-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                50+
-              </motion.div>
-              <div className="text-lg font-medium text-white/90">
-                Colaboradores
-              </div>
-            </motion.div>
-            <motion.div className="text-center" variants={statsVariants}>
-              <motion.div
-                className="text-5xl font-bold mb-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                200+
-              </motion.div>
-              <div className="text-lg font-medium text-white/90">
-                Clientes satisfeitos
-              </div>
-            </motion.div>
-            <motion.div className="text-center" variants={statsVariants}>
-              <motion.div
-                className="text-5xl font-bold mb-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                2
-              </motion.div>
-              <div className="text-lg font-medium text-white/90">
-                Unidades no Brasil
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* CTA Final */}
       <motion.section
-        className="py-20 px-6 md:px-20 text-center"
+        className="mt-16 py-15 px-6 md:px-20 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -412,7 +341,7 @@ export default function Home() {
             Pronto para elevar a qualidade dos seus produtos?
           </motion.h2>
           <motion.p
-            className="text-lg text-foreground/80 mb-8"
+            className="text-lg text-foreground/80"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -422,7 +351,7 @@ export default function Home() {
             mais confiáveis em fibra sintética no Brasil.
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 mt-5 justify-center"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -433,12 +362,13 @@ export default function Home() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                <Link href={"/produtos"}>Solicitar Orçamento</Link>
+                <Link href={"/produtos"}>Conheça nossos produtos</Link>
               </Button>
             </motion.div>
           </motion.div>
         </div>
       </motion.section>
+      <Footer></Footer>
     </main>
   );
 }
