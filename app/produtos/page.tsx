@@ -1,59 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ColorSelector } from "@/components/ColorSelector";
 import { TypeSelector } from "@/components/TypeSelector";
 import { Button } from "@/components/ui/button";
 import FloatingCart from "@/components/FloatingCart";
 import { useCart } from "@/context/CartContext";
-
-const colors = [
-  "Todas as cores",
-  "Amarelo",
-  "Areia",
-  "Areia Mesclado",
-  "Argila",
-  "Avelã Envelhecido",
-  "Azul BB",
-  "Azul Marinho",
-  "Azul Royal",
-  "Bege",
-  "Bege Mesclado",
-  "Branco",
-  "Branco Mesclado",
-  "Camurça",
-  "Capuccino",
-  "Capuccino Tropical",
-  "Caramelo",
-  "Carvalho",
-  "Cedro",
-  "Cerejeira Tropical",
-  "Chocolate",
-  "Chocolate Mesclado",
-  "Cinza",
-  "Cinza Tropical",
-  "Grafite",
-  "Laranja",
-  "Madeira",
-  "Marfim",
-  "Palha",
-  "Palha Tropical",
-  "Pinus",
-  "Preto",
-  "Preto Mesclado",
-  "Rosa BB",
-  "Rosa Pink",
-  "Roxo",
-  "Tabaco",
-  "Tabaco Tropical",
-  "Terracota",
-  "Tiffany",
-  "Verde Bambu",
-  "Verde BB",
-  "Verde Limão",
-  "Verde Musgo",
-  "Vermelho"
-];
+import { colors } from "@/data/colors";
 
 const types = [
   "CD (Cordão 4mm)",
@@ -63,11 +16,47 @@ const types = [
   "FTI (Fita Imperial 10mm)",
   "FTF (Fita Frizada 10mm)",
 ];
+const token = process.env.NEXT_PUBLIC_BASEROW_TOKEN;
 
 export default function Home() {
   const [selectedColor, setSelectedColor] = useState<string>("Todas as cores");
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const { cart, addToCart, clearCart, checkout } = useCart();
+
+  const [colorBannerMap, setColorBannerMap] = useState<Map<string, string>>(new Map());
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://base.mareanalitica.com.br/api/database/rows/table/700/?user_field_names=true",
+          {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          }
+        );
+
+        const data = await res.json();
+        const map = new Map<string, string>();
+
+        data.results.forEach((row: any) => {
+          const colorName = row["Cor"]?.value;
+          const bannerUrl = row["Banner"]?.[0]?.url;
+
+          if (colorName && bannerUrl) {
+            map.set(colorName, bannerUrl);
+          }
+        });
+
+        setColorBannerMap(map);
+      } catch (error) {
+        console.error("Erro ao carregar banners:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleQuantityChange = (type: string, delta: number) => {
     setQuantities((prev) => ({
@@ -122,10 +111,12 @@ export default function Home() {
                     types={types}
                     quantities={quantities}
                     useKeyPrefix
+                    bannerUrl={colorBannerMap.get(color)} // <-- aqui
                     onChange={(type, delta) =>
                       handleQuantityChange(`${color}__${type}`, delta)
                     }
                   />
+
                   <Button className="self-center mt-2 mb-2" onClick={handleAddToCart}>
                     Adicionar ao Carrinho
                   </Button>
@@ -137,8 +128,10 @@ export default function Home() {
                 color={selectedColor}
                 types={types}
                 quantities={quantities}
+                bannerUrl={colorBannerMap.get(selectedColor)} // <-- aqui também
                 onChange={handleQuantityChange}
               />
+
               <Button className="self-center mt-2 mb-2" onClick={handleAddToCart}>
                 Adicionar ao Carrinho
               </Button>
